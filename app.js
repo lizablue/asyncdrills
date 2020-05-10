@@ -34,3 +34,21 @@ function countdown(num, callback) {
 
 
 countdown(3, done);
+
+// Promises promises
+let lunchTime = true;
+
+const orderMeSomeFood = () => {
+    return new Promise((resolve, reject) => {
+        if(lunchTime === true) {
+            let meal = {
+                lunch: 'Bibimbap',
+                drink: 'Spindrift',
+            }
+            resolve(meal);
+        } else {
+            let err = new Error('we\'re out of food.');
+            reject(err);
+        }
+    });
+};
