@@ -15,28 +15,28 @@
 // };
 // getWords();
 
-// Callbacks and Recursion
-const done = () => {
-    console.log('Job\'s done!');
-};
+// // Callbacks and Recursion
+// const done = () => {
+//     console.log('Job\'s done!');
+// };
 
-function countdown(num, callback) {
-    setTimeout(() => {
-        if (num > 0) {
-            console.log(num);
-            countdown(num - 1, callback);
-        } else {
-            callback();
-        }
-    }, 1000);
+// function countdown(num, callback) {
+//     setTimeout(() => {
+//         if (num > 0) {
+//             console.log(num);
+//             countdown(num - 1, callback);
+//         } else {
+//             callback();
+//         }
+//     }, 1000);
 
-};
+// };
 
 
-countdown(3, done);
+// countdown(3, done);
 
 // Promises promises
-let lunchTime = true;
+let lunchTime = false;
 
 const orderMeSomeFood = () => {
     return new Promise((resolve, reject) => {
@@ -52,3 +52,10 @@ const orderMeSomeFood = () => {
         }
     });
 };
+
+orderMeSomeFood()
+.then((meal) => {
+    console.log(meal);
+}).catch((err) => {
+    console.log(err);
+});
